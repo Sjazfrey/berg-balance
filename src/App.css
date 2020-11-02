@@ -1,38 +1,143 @@
-.App {
+.noscroll{
+  overflow-x: hidden;
+}
+
+
+h2 {
   text-align: center;
+  padding-top: 30px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h6 {
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.heading {
+  background-color: lightgray
+}
+
+.Total {
+  background-color: rgb(236, 158, 158);
+  max-height: 100vw;
+}
+
+.container {
+  max-width: 100vw !important;
+}
+
+.row {
+  padding: 2em; 
+  padding-top: 2em;
+  background-color: rgb(238, 240, 241);
+}
+  /* https://getbootstrap.com/docs/4.0/layout/grid/ */
+.row.no-gutter [class*='col']:not(:first-child),
+.row.no-gutter [class*='col']:not(:last-child) {
+  padding-right: 0;
+  padding-left: 0;
+  border: 1px solid black;
+  border-radius: 2px;
+  padding-left: 10px;
+ }
+
+ .all {
+   margin-left: -9px;
+   margin-top: -50px;
+ }
+
+.tin {
+  text-align: center;
+  margin-top: 30px;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.info {
+  margin-left: 10px;
+  padding-top: 25px;
+}
+
+@keyframes click-wave {
+  0% {
+      height: 40px;
+      width: 40px;
+      opacity: 0.15;
+      position: relative
+  }
+
+  100% {
+      height: 200px;
+      width: 200px;
+      margin-left: -80px;
+      margin-top: -80px;
+      opacity: 0
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 4.75px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000
+} 
+
+.option-input:hover {
+  background: #9faab7
+} 
+
+ .option-input:checked {
+  background: #46d3e3
+} 
+
+.option-input:checked::before {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  content: "\f118" !important;
+  font-family: "Font Awesome 5 Free" !important;
+  display: inline-block;
+  font-size: 13.5px;
+  text-align: center;
+  line-height: 20px
 }
 
-.App-link {
-  color: #61dafb;
+.option-input:checked::after {
+  -webkit-animation: click-wave 0.25s;
+  -moz-animation: click-wave 0.25s;
+  animation: click-wave 0.25s;
+  background: #46d3e3;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.option-input.radio {
+  border-radius: 50%
 }
+
+.option-input.radio::after {
+  border-radius: 50%
+}
+
